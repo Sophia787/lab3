@@ -1,18 +1,8 @@
 def find_missing_nums(nums):
-    list1 = nums   
-    n = 0
-    for i in list1:
-        n += 1
-        
-    list2 = [list2 for list2 in range(1, n+1)]
+    nums1 = list(range(1,len(nums)))
+    return list(set(nums1) - set(nums))
 
-    k = 0
-    list3 = []
-    while k < n:
-        if list2[k] not in list1:
-            list3.append(list2[k])
-            k+=1
-        else:
-            k+=1
-            
-    return list3
+while True:
+    print("Вход (введите значения списка через пробел): ")
+    nums = [int(i) for i in input('nums = ').split()]
+    print("Вывод: ", find_missing_nums(nums))
